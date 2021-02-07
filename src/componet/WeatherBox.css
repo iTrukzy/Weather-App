@@ -1,0 +1,124 @@
+:root {
+    --primary-color: #214151;
+    --secondary-color: #11698e;
+}
+
+.Weather {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.header__box {
+    border-radius: 10px 10px 0px 0px;
+    position: relative;
+    padding: 20px 20px;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    text-transform: capitalize;
+}
+.header__box h2 {
+    color:var(--primary-color);
+}
+.header__box h2 span {
+    color: var(--secondary-color);
+}
+.header__box h5 {
+    color: var(--primary-color);
+    margin-bottom: .7rem;
+}
+.header__box p {
+    color: var(--secondary-color);
+    border-bottom: 1px double var(--secondary-color);
+}
+
+.status__site {
+    color: var(--primary-color);
+    display: flex;
+    position: absolute;
+    bottom: 1rem;
+    text-align: left;
+}
+.status__site div {
+    margin-right: 1.3rem;
+}
+.status__site p {
+    color: var(--secondary-color);
+    border: none;
+}
+
+.footer__box {
+    position: relative;
+    border-radius: 0px 0px 10px 10px;
+    display: flex;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.322);
+    align-items: center;
+    padding: 10px 20px;
+    text-align: center;
+}
+.footer__box span {
+    font-size: 3rem;
+    color: var(--secondary-color);
+}
+.footer__box p {
+    font-size: .8rem;
+    color: var(--primary-color);
+    width: 60px;
+    margin: 0 auto;
+}
+.icon__site {
+    border-right: 2px double rgba(0, 0, 0, 0.212);
+    height: 100px;
+    margin-left: 2rem;
+    padding-right: 20px;
+}
+.icon__site img {
+    width: 60px;
+}
+
+
+.convert__formule {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    cursor: pointer;
+}
+.convert__formule:focus {
+    outline: none;
+    border: 1px solid var(--primary-color);
+}
+@media (min-width: 768px) {
+    .Weather {
+        width: 70%;
+        height: 700px;
+    }
+    .header__box {
+        height: 500px;
+    }
+    .footer__box {
+        height: 200px;
+    }
+    .icon__site {
+        height: 200px;
+    }
+    .footer__box span{
+        font-size: 4rem;
+        margin-left: 2rem;
+    }
+    .icon__site img {
+        width: 130px;
+    }
+}

@@ -1,23 +1,41 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react'
 import './App.css';
+import Loading from './componet/Loading';
+import WeatherBox from './componet/WeatherBox.js'
+import axios from 'axios'
+
 
 function App() {
+  const API_KEY = '13f35ec4de8792736d638ef1dfe49be9'
+  
+  const [isLoading, setIsLoading] = useState(true)
+  const [value, setValue] = useState([])
+  const [coord, setCoord] = useState([])
+
+  useEffect(() => {
+    const getData = async () => {
+      const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${value.lat}&lon=${value.lon}&appid=${API_KEY}`)
+      setCoord(res.data)
+      setTimeout(() => {
+        setIsLoading(false)
+      }, 2000);
+      
+    }
+      navigator.geolocation.getCurrentPosition(geo)
+    getData()
+  }, [value.lat, value.lon])
+  
+  const geo = (position) => {
+    const arr = {
+      lat: position.coords.latitude,
+      lon: position.coords.longitude
+    }
+    setValue(arr)
+  } 
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{backgroundImage: "url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQaH9DvTuFiV5f8G1MM40qmb3tHtLgp8BS2w&usqp=CAU)"}}>
+      { isLoading ? <Loading /> : <WeatherBox coord={coord}/> }
     </div>
   );
 }
