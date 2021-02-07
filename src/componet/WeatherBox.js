@@ -22,8 +22,7 @@ function WeatherBox( { coord } ) {
         icon: coord.weather[0].icon,
         wind: coord.wind.speed,
         humidity: coord.main.humidity,
-        pressure: coord.main.pressure,
-        
+        pressure: coord.main.pressure,    
         cloods: coord.weather[0].main
     }
 
