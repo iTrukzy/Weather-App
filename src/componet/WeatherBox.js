@@ -9,7 +9,7 @@ function WeatherBox( { coord } ) {
     let houre = toDay.getHours() + ":" + toDay.getMinutes();
 
     const [degrees, setDegrees] = useState({
-        dg: coord.main.temp - 273.15,
+        dg: Math.round(coord.main.temp - 273.15),
         type: true,
         grade: "°C"
     })
@@ -30,14 +30,14 @@ function WeatherBox( { coord } ) {
         const data = degrees.dg
         if(degrees.type) {
             setDegrees({
-                dg: [(data * 9/5) + 32],
+                dg: Math.round([(data * 9/5) + 32]),
                 type: false,
                 grade: "°F"
             })
         }
         else {
             setDegrees({
-                dg: coord.main.temp - 273.15,
+                dg: Math.round(coord.main.temp - 273.15),
                 type: true,
                 grade: "°C"
             })

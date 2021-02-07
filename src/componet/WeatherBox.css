@@ -103,22 +103,22 @@
 @media (min-width: 768px) {
     .Weather {
         width: 70%;
-        height: 700px;
+        height: 550px;
     }
     .header__box {
-        height: 500px;
+        height: 400px;
     }
     .footer__box {
-        height: 200px;
+        height: 150px;
     }
     .icon__site {
-        height: 200px;
+        height: 150px;
     }
     .footer__box span{
         font-size: 4rem;
         margin-left: 2rem;
     }
     .icon__site img {
-        width: 130px;
+        width: 120px;
     }
 }
