@@ -44,7 +44,7 @@ function WeatherBox( { coord } ) {
         }
     }
 
-    let iconUrl = `http://openweathermap.org/img/wn/${dats.icon}.png`;
+    let iconUrl = `https://openweathermap.org/img/wn/${dats.icon}.png`;
 
 
 
