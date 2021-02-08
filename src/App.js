@@ -37,7 +37,7 @@ function App() {
   } 
   
   return (
-    <div className="App" style={{backgroundImage: "url(https://wallpaperaccess.com/full/1540012.jpg)"}}>
+    <div className="App" >
       { isLoading ? <Loading /> : <WeatherBox coord={coord}/> }
     </div>
   );

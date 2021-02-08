@@ -6,12 +6,10 @@
   }
   .App {
     height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-
+    background: rgb(126,137,176);
+   background: linear-gradient(0deg, rgba(126,137,176,0.9837587006960556) 0%, rgba(247,247,247,1) 100%);
   }

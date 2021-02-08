@@ -58,7 +58,7 @@
     border-radius: 0px 0px 10px 10px;
     display: flex;
     height: 100px;
-    background-color: rgba(255, 255, 255, 0.322);
+    background-color: rgba(255, 255, 255, 0.151);
     align-items: center;
     padding: 10px 20px;
     text-align: center;
@@ -120,5 +120,11 @@
     }
     .icon__site img {
         width: 120px;
+    }
+}
+@media (min-width: 1250px) {
+    .Weather {
+        width: 50%;
+        height: 550px;
     }
 }
