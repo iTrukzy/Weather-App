@@ -14,14 +14,17 @@ function App() {
 
   useEffect(() => {
     const getData = async () => {
-      const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${value.lat}&lon=${value.lon}&appid=${API_KEY}`)
-      setCoord(res.data)
-      setTimeout(() => {
-        setIsLoading(false)
-      }, 2000);
-      
-    }
-      navigator.geolocation.getCurrentPosition(geo)
+      if(value.lat === undefined  && value.lon === undefined ) {
+        navigator.geolocation.getCurrentPosition(geo)
+      }
+      else {
+        const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${value.lat}&lon=${value.lon}&appid=${API_KEY}`)
+        setCoord(res.data)
+        setTimeout(() => {
+          setIsLoading(false)
+        }, 2000);
+      }    
+    }     
     getData()
   }, [value.lat, value.lon])
   
